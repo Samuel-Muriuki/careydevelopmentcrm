@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { AddContactComponent } from './add-contact/add-contact.component';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
@@ -39,7 +39,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { DirectivesModule } from '../../directives/directives.module';
 import { ValidationModule } from 'carey-validation';
 
-export const routes = [
+export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'add-contact' },
   {
     path: 'add-contact',

@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from "@angular/forms";
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
@@ -8,11 +8,11 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class UpdateNotesDialog implements OnInit {
 
-  notesFormGroup: FormGroup;
+  notesFormGroup: UntypedFormGroup;
 
   constructor(
     public dialogRef: MatDialogRef<UpdateNotesDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: string, private fb: FormBuilder) { }
+    @Inject(MAT_DIALOG_DATA) public data: string, private fb: UntypedFormBuilder) { }
 
   ngOnInit() {
     this.notesFormGroup = this.fb.group({

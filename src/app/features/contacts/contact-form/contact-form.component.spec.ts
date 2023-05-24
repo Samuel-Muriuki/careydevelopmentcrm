@@ -5,7 +5,7 @@ import { ContactFormComponent } from './contact-form.component';
 import { AddressesFormComponent } from './addresses-form/addresses-form.component';
 import { BasicInfoFormComponent } from './basic-info-form/basic-info-form.component';
 import { PhonesFormComponent } from './phones-form/phones-form.component';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 describe('ContactFormComponent', () => {
@@ -26,7 +26,7 @@ describe('ContactFormComponent', () => {
       ],
       providers: [
         AlertService,
-        FormBuilder
+        UntypedFormBuilder
       ]
     })
     .compileComponents();

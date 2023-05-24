@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 import { AddressesFormComponent } from './addresses-form.component';
 
 describe('AddressesFormComponent', () => {
@@ -11,7 +11,7 @@ describe('AddressesFormComponent', () => {
       declarations: [AddressesFormComponent],
       imports: [],
       providers: [
-        FormBuilder
+        UntypedFormBuilder
       ]
     })
     .compileComponents();

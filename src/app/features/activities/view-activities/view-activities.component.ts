@@ -4,7 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { UserService, User } from 'carey-user';
 import { AlertService } from 'carey-alert';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DisplayValueMapService } from '../../ui/service/display-map.service';
 import { ActivityType } from '../models/activity-type';
@@ -50,10 +50,10 @@ export class ViewActivitiesComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  typeFilter = new FormControl('');
-  contactFilter = new FormControl('');
-  statusFilter = new FormControl('');
-  outcomeFilter = new FormControl('');
+  typeFilter = new UntypedFormControl('');
+  contactFilter = new UntypedFormControl('');
+  statusFilter = new UntypedFormControl('');
+  outcomeFilter = new UntypedFormControl('');
 
   filterValues: any = {
     type: '',

@@ -4,7 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { UserService, User } from 'carey-user';
 import { AlertService } from 'carey-alert';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DisplayValueMap } from '../../../models/name-value-map';
 import { DisplayValueMapService } from '../../ui/service/display-map.service';
@@ -35,8 +35,8 @@ export class ViewAccountsComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  statusFilter = new FormControl('');
-  industryFilter = new FormControl('');
+  statusFilter = new UntypedFormControl('');
+  industryFilter = new UntypedFormControl('');
 
   filterValues: any = {
     status: '',

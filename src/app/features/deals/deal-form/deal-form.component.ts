@@ -2,7 +2,7 @@ import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 import { Contact } from '../../contacts/models/contact';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertService } from 'carey-alert';
-import { ValidatorFn, FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
+import { ValidatorFn, UntypedFormGroup, UntypedFormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { Deal } from '../models/deal';
 import { Product } from '../models/product';
 import { DealStage } from '../models/deal-stage';
@@ -39,7 +39,7 @@ export class DealFormComponent implements OnInit {
 
   addingForContact: boolean = false;
 
-  dealFormGroup: FormGroup;
+  dealFormGroup: UntypedFormGroup;
 
   currentClosureDate: number;
   currentProduct: Product;
@@ -60,7 +60,7 @@ export class DealFormComponent implements OnInit {
   allSalesTypes$: Observable<SalesType[]>;
 
   constructor(private route: ActivatedRoute, private contactService: ContactService,
-    private alertService: AlertService, private fb: FormBuilder,
+    private alertService: AlertService, private fb: UntypedFormBuilder,
     private dealService: DealService, private dateService: DateService,
     private formService: FormService, private userService: UserService,
     private productService: ProductService, private router: Router) { }

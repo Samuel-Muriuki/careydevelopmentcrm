@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Contact } from '../models/contact';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 import { BasicInfoFormComponent } from '../contact-form/basic-info-form/basic-info-form.component';
 import { ValidationService } from 'carey-validation';
 
@@ -24,7 +24,7 @@ export class ContactValidationService {
   }
 
   private validateBasicInfoForm(basicInfoComponent: BasicInfoFormComponent): string[] {
-    let basicInfoForm: FormGroup = basicInfoComponent.basicInfoFormGroup;
+    let basicInfoForm: UntypedFormGroup = basicInfoComponent.basicInfoFormGroup;
 
     let errorMessages: string[] = this.validationService.validateForm(basicInfoForm);
 

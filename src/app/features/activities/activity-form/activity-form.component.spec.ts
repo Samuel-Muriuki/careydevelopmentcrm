@@ -3,7 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from "@angular/common/http/testing";
 import { ActivityFormComponent } from './activity-form.component';
 import { AlertService } from 'carey-alert';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Activity } from '../models/activity';
 import { ActivityTypeLightweight } from '../models/activity-type-lightweight';
 import { UserService, User } from 'carey-user';
@@ -44,7 +44,7 @@ describe('ActivityFormComponent', () => {
           provide: ContactService,
           useValue: mockContactService
         },
-        FormBuilder
+        UntypedFormBuilder
       ]
     })
     .compileComponents();
@@ -106,7 +106,7 @@ describe('ActivityFormComponent', () => {
     component.activity = goodActivity;
     fixture.detectChanges();
 
-    let form: FormGroup = component.activityFormGroup;
+    let form: UntypedFormGroup = component.activityFormGroup;
     let endDate = form.get('endDate').value;
     let startDate = form.get('startDate').value;
 

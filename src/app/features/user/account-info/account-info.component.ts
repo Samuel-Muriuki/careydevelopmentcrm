@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators } from '@angular/forms';
 import { Country, State, GeoService } from 'carey-geo';
 import { User, UserService } from 'carey-user';
 import { AlertService } from 'carey-alert';
@@ -13,7 +13,7 @@ import { AlertService } from 'carey-alert';
 })
 export class AccountInfoComponent implements OnInit {
 
-  form: FormGroup;
+  form: UntypedFormGroup;
 
   states: State[] = [];
   countries: Country[] = [];
@@ -23,7 +23,7 @@ export class AccountInfoComponent implements OnInit {
   user: User = {} as User;
   dataLoading: boolean = true;
 
-  constructor(private fb: FormBuilder, private geoService: GeoService,
+  constructor(private fb: UntypedFormBuilder, private geoService: GeoService,
     private userService: UserService, private alertService: AlertService) { }
 
   ngOnInit(): void {

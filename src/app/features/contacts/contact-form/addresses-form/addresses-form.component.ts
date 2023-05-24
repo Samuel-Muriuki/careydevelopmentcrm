@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChildren, Input, ViewEncapsulation } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { Address } from '../../../../models/address';
 import { addressTypes } from '../../../../models/address-type';
 import { Contact } from '../../models/contact';
@@ -19,7 +19,7 @@ export class AddressesFormComponent implements OnInit {
 
   availableAddressTypes = addressTypes;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: UntypedFormBuilder) { }
 
   ngOnInit() {
   }
@@ -29,7 +29,7 @@ export class AddressesFormComponent implements OnInit {
 
     this.addressTypeComponents.forEach((element, index) => {
       let address = {} as Address;
-      let addressForm: FormGroup = element.addressTypeFormGroup;
+      let addressForm: UntypedFormGroup = element.addressTypeFormGroup;
 
       address.addressType = addressForm.controls['addressType'].value;
       address.city = addressForm.controls['city'].value;

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { GeoService } from 'carey-geo';
 import { Phone } from '../../../../../models/phone';
 import { Contact } from '../../../models/contact';
@@ -11,7 +11,7 @@ import { Contact } from '../../../models/contact';
 })
 export class PhoneTypeFormComponent implements OnInit {
 
-  phoneTypeFormGroup: FormGroup;
+  phoneTypeFormGroup: UntypedFormGroup;
 
   @Input() phoneType: string;
   @Input() contact: Contact;
@@ -20,7 +20,7 @@ export class PhoneTypeFormComponent implements OnInit {
   phoneCode = '1';
   countryCodes = ['us', 'ca', 'de', 'mx', 'br', 'pt', 'cn', 'be', 'jp', 'ph', 'lu', 'bs'];
 
-  constructor(private fb: FormBuilder, private geoService: GeoService) { }
+  constructor(private fb: UntypedFormBuilder, private geoService: GeoService) { }
 
   ngOnInit() {
     this.initForm();

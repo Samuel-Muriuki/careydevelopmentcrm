@@ -7,7 +7,7 @@ import { AlertService } from 'carey-alert';
 import { Contact } from '../models/contact';
 import { contactStatuses } from '../constants/contact-status';
 import { linesOfBusiness } from '../constants/line-of-business';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DisplayValueMap } from '../../../models/name-value-map';
 import { DisplayValueMapService } from '../../ui/service/display-map.service';
@@ -38,8 +38,8 @@ export class ViewContactsComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  statusFilter = new FormControl('');
-  sourceFilter = new FormControl('');
+  statusFilter = new UntypedFormControl('');
+  sourceFilter = new UntypedFormControl('');
 
   contacts: Contact[];
 

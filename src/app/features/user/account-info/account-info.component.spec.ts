@@ -1,6 +1,6 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AlertService } from 'carey-alert';
 import { AccountInfoComponent } from './account-info.component';
@@ -17,7 +17,7 @@ describe('AccountInfoComponent', () => {
         RouterTestingModule
       ],
       providers: [
-        FormBuilder,
+        UntypedFormBuilder,
         AlertService
       ]
     })

@@ -4,7 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { UserService, User } from 'carey-user';
 import { AlertService } from 'carey-alert';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DisplayValueMapService } from '../../ui/service/display-map.service';
 import { Deal } from '../models/deal';
@@ -48,9 +48,9 @@ export class ViewDealsComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  stageFilter = new FormControl('');
-  contactFilter = new FormControl('');
-  accountFilter = new FormControl('');
+  stageFilter = new UntypedFormControl('');
+  contactFilter = new UntypedFormControl('');
+  accountFilter = new UntypedFormControl('');
 
   filterValues: any = {
     stage: '',

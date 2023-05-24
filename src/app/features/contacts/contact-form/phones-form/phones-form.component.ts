@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChildren, Input } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Phone } from '../../../../models/phone';
 import { phoneTypes } from '../../../../models/phone-type';
 import { Contact } from '../../models/contact';
@@ -19,7 +19,7 @@ export class PhonesFormComponent implements OnInit {
 
   @Input() contact: Contact;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: UntypedFormBuilder) { }
 
   ngOnInit() {
   }
@@ -29,7 +29,7 @@ export class PhonesFormComponent implements OnInit {
 
     this.phoneTypeComponents.forEach((element, index) => {
       let phone = {} as Phone;
-      let phoneForm: FormGroup = element.phoneTypeFormGroup;
+      let phoneForm: UntypedFormGroup = element.phoneTypeFormGroup;
       let countryCode: string = element.selectedCountryCode;
 
       phone.phoneType = phoneForm.controls['phoneType'].value;

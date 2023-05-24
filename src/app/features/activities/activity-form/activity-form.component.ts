@@ -2,7 +2,7 @@ import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 import { Contact } from '../../contacts/models/contact';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { AlertService } from 'carey-alert';
-import { ValidatorFn, FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
+import { ValidatorFn, UntypedFormGroup, UntypedFormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { Activity } from '../models/activity';
 import { ActivityType } from '../models/activity-type';
 import { ActivityService } from '../service/activity.service';
@@ -49,7 +49,7 @@ export class ActivityFormComponent implements OnInit {
   addingForContact: boolean = false;
   addingActivityType: boolean = false;
 
-  activityFormGroup: FormGroup;
+  activityFormGroup: UntypedFormGroup;
 
   availableActivityTypes: ActivityType[] = [this.loadingActivityType];
   availableActivityOutcomes: ActivityOutcome[] = [];
@@ -68,7 +68,7 @@ export class ActivityFormComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private contactService: ContactService,
     private alertService: AlertService, private router: Router,
-    private fb: FormBuilder, private activityService: ActivityService,
+    private fb: UntypedFormBuilder, private activityService: ActivityService,
     private dateService: DateService, private formService: FormService,
     private userService: UserService, private dealService: DealService) { }
 

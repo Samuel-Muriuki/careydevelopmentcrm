@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertService } from 'carey-alert';
 import { Country, GeoService, State } from 'carey-geo';
@@ -20,7 +20,7 @@ import { AccountService } from '../services/account.service';
 })
 export class AccountFormComponent implements OnInit {
 
-  accountInfoFormGroup: FormGroup;
+  accountInfoFormGroup: UntypedFormGroup;
 
   availableSources: DisplayValueMap[] = sources;
   availableAccountStatuses: DisplayValueMap[] = accountStatuses;
@@ -39,7 +39,7 @@ export class AccountFormComponent implements OnInit {
 
   pageTitle: string = 'Add Account';
 
-  constructor(private fb: FormBuilder, private geoService: GeoService,
+  constructor(private fb: UntypedFormBuilder, private geoService: GeoService,
     private accountService: AccountService, private alertService: AlertService,
     private router: Router) { }
 

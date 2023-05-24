@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Navigation, Router } from '@angular/router';
 import { AlertService } from 'carey-alert';
 import { UserService } from 'carey-user';
@@ -13,7 +13,7 @@ import { EmailService } from '../service/email.service';
 })
 export class ComposeEmailComponent implements OnInit {
 
-  form: FormGroup;
+  form: UntypedFormGroup;
   formSubmitted: boolean = false;
 
   email: Email;
@@ -40,7 +40,7 @@ export class ComposeEmailComponent implements OnInit {
     }
   }
 
-  constructor(private fb: FormBuilder, private emailService: EmailService,
+  constructor(private fb: UntypedFormBuilder, private emailService: EmailService,
     private userService: UserService, private alertService: AlertService,
     private router: Router) {
 

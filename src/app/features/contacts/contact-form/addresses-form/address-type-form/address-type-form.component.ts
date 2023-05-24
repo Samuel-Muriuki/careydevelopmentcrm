@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Country, State, GeoService } from 'carey-geo';
 import { forkJoin, Observable } from 'rxjs';
 import { Address } from '../../../../../models/address';
@@ -13,7 +13,7 @@ import { Contact } from '../../../models/contact';
 })
 export class AddressTypeFormComponent implements OnInit {
 
-  addressTypeFormGroup: FormGroup;
+  addressTypeFormGroup: UntypedFormGroup;
 
   @Input() addressType: string;
   @Input() contact: Contact;
@@ -23,7 +23,7 @@ export class AddressTypeFormComponent implements OnInit {
 
   dataLoading: boolean = true;
 
-  constructor(private fb: FormBuilder, private geoService: GeoService) { }
+  constructor(private fb: UntypedFormBuilder, private geoService: GeoService) { }
 
   ngOnInit() {
     this.initGeos();

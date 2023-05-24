@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ValidationErrors, FormGroup, ValidatorFn, AsyncValidatorFn, FormBuilder, Validators, AbstractControl } from '@angular/forms';
+import { ValidationErrors, UntypedFormGroup, ValidatorFn, AsyncValidatorFn, UntypedFormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { contactStatuses } from '../../constants/contact-status';
 import { linesOfBusiness } from '../../constants/line-of-business';
 import { Contact } from '../../models/contact';
@@ -23,7 +23,7 @@ import { sources } from '../../../../models/source';
 })
 export class BasicInfoFormComponent implements OnInit {
 
-  basicInfoFormGroup: FormGroup;
+  basicInfoFormGroup: UntypedFormGroup;
   originalFormState: Contact;
 
   availableSources: DisplayValueMap[] = sources;
@@ -46,7 +46,7 @@ export class BasicInfoFormComponent implements OnInit {
 
   @Input() contact: Contact;
 
-  constructor(private fb: FormBuilder, private contactService: ContactService,
+  constructor(private fb: UntypedFormBuilder, private contactService: ContactService,
     private accountService: AccountService, private geoService: GeoService, private dateService: DateService) { }
 
   ngOnInit() {
@@ -215,7 +215,7 @@ export class BasicInfoFormComponent implements OnInit {
   }
 
   populateContact(contact: Contact) {
-    let basicInfo: FormGroup = this.basicInfoFormGroup;
+    let basicInfo: UntypedFormGroup = this.basicInfoFormGroup;
 
     contact.authority = (basicInfo.controls['authority'].value == 'true');
     contact.account = this.getAccount(basicInfo.controls['account'].value);
